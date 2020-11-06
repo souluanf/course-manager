@@ -1,0 +1,16 @@
+<h2>Course Info</h2>
+
+
+<form #courseForm="ngForm">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name: </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.name" required name="name" #courseName="ngModel" [ngClass]="{'is-invalid':courseName.invalid}" class="form-control">
+      <!-- Passar classes dinâmicamente através do ngClass -->
+      <div class="invalid-feedback">
+        <span>Course name is required</span>
+      </div>
+
+    </div>
+  </div>
+</form>
