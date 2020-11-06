@@ -9,29 +9,29 @@ export class CourseListComponent implements OnInit {
 
   filteredCourses: Course [] = [];
 
-  _courses: Course[] = [];
+  courses: Course[] = [];
 
-  _filterBy: string;
+  filterBy: string;
 
   constructor(private courseService: CourseService) { }
 
 
   ngOnInit(): void {
-    this._courses = this.courseService.retrieveAll();
-    this.filteredCourses = this._courses;
+    this.courses = this.courseService.retrieveAll();
+    this.filteredCourses = this.courses;
   }
 
   set filter(value: string){
-    this._filterBy = value;
-    this.filteredCourses = this._courses
+    this.filterBy = value;
+    this.filteredCourses = this.courses
       .filter((course: Course) => course.name
         .toLocaleLowerCase()
-        .indexOf(this._filterBy
+        .indexOf(this.filterBy
           .toLocaleLowerCase()) > -1 );
   }
 
   get filter(): string{
-    return this._filterBy;
+    return this.filterBy;
   }
 
 }
