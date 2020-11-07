@@ -16,8 +16,8 @@ import {CourseModule} from './courses/course.module';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     CourseModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '', redirectTo: 'courses', pathMatch: 'full'
